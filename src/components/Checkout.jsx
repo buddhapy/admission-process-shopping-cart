@@ -20,7 +20,7 @@ const Checkout = () => {
             productos : carrito,
             total : precioTotal()
         }
-        console.log(pedido);
+        //console.log(pedido);
         setTotal(pedido.total);
 
         const pedidosRef = collection(db, "pedidos");

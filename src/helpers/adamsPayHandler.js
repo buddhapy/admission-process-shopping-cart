@@ -14,7 +14,6 @@ export function generateDebt(debt) {
     })
     .then(data => {
         const payUrl = data.debt.payUrl ? data.debt.payUrl : null;
-        console.log(data);
         return payUrl;
     })
     .then(payUrl => {
@@ -41,9 +40,7 @@ export async function getDebtPaid(debtId) {
         }
 
         const data = await response.json();
-        console.log(data.debt.payStatus.status);        
-        if(data.debt.payStatus.status === 'paid'){
-            console.log('Pagado');
+        if(data.debt.payStatus.status === 'paid'){            
             window.alert('Pago realizado con éxito');
             //se pueden realizar llamadas o consultas utilizando lo que se tenga - posibilidades de finalizar el ciclo de pago
         } else if(data.debt.payStatus.status === 'pending'){
